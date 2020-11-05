@@ -22,4 +22,4 @@ jobs:
         RUNNER_VERSION=${TAG_NAME//v}
       
     - name: Build the Docker image
-      run: docker build --tag github-runner:${RUNNER_VERSION} .
+      run: docker build --tag github-runner .
