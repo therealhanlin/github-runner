@@ -16,10 +16,5 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Obtain Github runner version number
-      run: |
-        TAG_NAME=$(curl -s -X GET 'https://api.github.com/repos/actions/runner/releases/latest' | jq -r '.name')
-        RUNNER_VERSION=${TAG_NAME//v}
-      
     - name: Build the Docker image
       run: docker build --tag github-runner .
